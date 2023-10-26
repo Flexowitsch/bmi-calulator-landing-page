@@ -145,6 +145,82 @@ p {
 }
 
 
+/* bmi meaning section */
+
+section.bmi-meaning {
+    gap: 8.19rem;
+    padding: 0 8.75rem;
+    align-items: center;
+}
+
+@media(max-width: 768px) {
+    section.bmi-meaning {
+        gap: 4.69rem;
+        padding: 0 0;
+    }
+}
+
+section.bmi-meaning .img-container, .text-container {
+    flex: 1;
+}
+
+section.bmi-meaning .img-container {
+    position: relative;
+}
+
+@media(max-width: 768px) {
+    section.bmi-meaning .img-container {
+        width: 100%;
+        height: fit-content;
+        
+        
+    }
+}
+
+section.bmi-meaning .text-container {
+    position: relative;
+}
+
+@media(max-width: 768px) {
+   
+section.bmi-meaning .text-container {
+    padding-right: 2.68rem;
+} 
+}
+
+
+section.bmi-meaning img {
+    width: 100%;
+}
+
+@media(max-width: 768px) {
+    section.bmi-meaning img {
+        height: 411px;
+        width: auto;
+        position: absolute;
+        top: 50%;
+        left: -50%;
+    }
+}
+
+section.bmi-meaning p.heading-l {
+    margin-bottom: 2.19rem;
+}
+
+
+section.bmi-meaning #line-left {
+    width: 5rem;
+    position: absolute;
+    right: 0%;
+    top: -71%;
+}
+
+@media(max-width: 768px) {
+    section.bmi-meaning #line-left {
+       display: none;
+    }
+}
+
 /* bmi benefits section */
 
 section.bmi-benefits-container {
