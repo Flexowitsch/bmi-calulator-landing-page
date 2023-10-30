@@ -122,15 +122,28 @@ p {
     display: grid;
 }
 
+.gap {
+    margin-bottom: 6rem;
+}
+
+@media(max-width: 390px) {
+    .gap {
+        margin-bottom: 4.5rem;
+    }
+}
+
 /* layout */
 
 .container {
     padding: 0 1.5rem;
     flex-direction: column;
-    gap: 6rem;
     max-width: 1440px;
     margin: 0 auto;
+    display: grid;
+
 }
+
+
 
 @media(max-width: 768px) {
     .container {
@@ -138,12 +151,155 @@ p {
     }
 }
 
-@media(max-width: 390px) {
-    .container {
-        gap: 4.5rem;
+
+/* bmi calculator section */
+
+header {
+    width: 100%;
+    border-radius: 0rem 0rem 2.1875rem 2.1875rem;
+    background: url('./assets/images/bg-desktop.png');
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 16.62rem 7.25rem 5.73rem 7.25rem;
+    gap: 8.25rem;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+@media(max-width: 768px) {
+    header {
+        background: var(--Gradient-1, linear-gradient(290deg, #D6E6FE 0%, rgba(214, 252, 254, 0.00) 100%));
     }
 }
 
+header .bmi-logo {
+    position: absolute;
+    top: 4.69rem;
+    left: 7.25rem;
+}
+
+/* styles for the text container */
+
+header .header-text-container {
+    max-width: 500px;
+}
+
+.header-text-container p.heading-xl {
+    margin-bottom: 2.25rem;
+}
+
+/* styles for the input container */
+
+header .input-container {
+    border-radius: 1rem;
+    background: var(--Pure-White, #FFF);
+    box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+    padding: 2rem;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 26rem;
+}
+
+header .radio-btns {
+    gap: 1.5rem;
+}
+
+header .radio-btn-container {
+    flex-grow: 1;
+    align-items: center;
+    gap: 1.12rem;
+}
+
+@media(max-width: 768px) {
+    header .radio-btn-container {
+        gap: 1.12rem;
+    }
+}
+
+/*  Styling of the radio buttons */
+
+header input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 50%;
+    background: none;
+    border: 1px solid var(--borders);
+    /* The outline will be the outer circle */
+    outline: none;
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+}
+
+header input[type="radio"]:checked {
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 50%;
+    background: var(--blue);
+    border: 8px solid #E1E7FE;
+    ;
+    /* The outline will be the outer circle */
+    outline: none;
+    width: 2rem;
+    height: 2rem;
+
+}
+
+header .radio-btn-container label {
+    color: var(--gunmetal)
+}
+
+
+/* input fields for the values */
+
+header .input-fields {
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+header .input-fields .input-field-container {
+    flex-grow: 1;
+}
+
+header .input input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--borders);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.075rem;
+}
+
+/*hide arrows in the numbers input */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* styling the unit display */
+
+header .input-field-container .input {
+    position: relative;
+}
+
+header .input-field-container .input .unit-display {
+    position: absolute;
+    top: 28%;
+    right: 1.5rem;
+    color: var(--blue);
+    text-align: right;
+}
 
 /* bmi meaning section */
 
@@ -160,20 +316,31 @@ section.bmi-meaning {
     }
 }
 
-section.bmi-meaning .img-container, .text-container {
-    flex: 1;
+@media(max-width: 390px) {
+    section.bmi-meaning {
+        gap: 4.69rem;
+        padding: 0 0;
+        flex-direction: column;
+    }
 }
 
-section.bmi-meaning .img-container {
-    position: relative;
+section.bmi-meaning .img-container,
+.text-container {
+    flex: 1;
 }
 
 @media(max-width: 768px) {
     section.bmi-meaning .img-container {
-        width: 100%;
-        height: fit-content;
-        
-        
+        position: relative;
+        height: 411px;
+    }
+}
+
+@media(max-width: 390px) {
+    section.bmi-meaning .img-container {
+        position: static;
+        height: auto;
+        width: 99%;
     }
 }
 
@@ -182,15 +349,22 @@ section.bmi-meaning .text-container {
 }
 
 @media(max-width: 768px) {
-   
-section.bmi-meaning .text-container {
-    padding-right: 2.68rem;
-} 
+    section.bmi-meaning .text-container {
+        padding-right: 2.68rem;
+    }
+}
+
+@media(max-width: 390px) {
+    section.bmi-meaning .text-container {
+
+        flex-direction: column;
+    }
 }
 
 
 section.bmi-meaning img {
     width: 100%;
+    max-width: 600px;
 }
 
 @media(max-width: 768px) {
@@ -198,8 +372,13 @@ section.bmi-meaning img {
         height: 411px;
         width: auto;
         position: absolute;
-        top: 50%;
-        left: -50%;
+        right: 0%;
+    }
+}
+
+@media(max-width: 390px) {
+    section.bmi-meaning img {
+        position: static;
     }
 }
 
@@ -217,7 +396,7 @@ section.bmi-meaning #line-left {
 
 @media(max-width: 768px) {
     section.bmi-meaning #line-left {
-       display: none;
+        display: none;
     }
 }
 
@@ -322,7 +501,7 @@ section.limitations-bmi {
 @media(max-width: 768px) {
     #limitations-headline {
         grid-column: 1 / 12;
-    } 
+    }
 }
 
 #line-right {
@@ -365,7 +544,7 @@ section.limitations-bmi {
 
 #muscle {
     grid-column: 9 / 13;
-    grid-row: 2 / 2; 
+    grid-row: 2 / 2;
 }
 
 @media(max-width: 768px) {
@@ -401,6 +580,7 @@ section.limitations-bmi {
 
 
 @media(max-width: 390px) {
+
     #limitations-headline,
     #gender,
     #age,
@@ -409,7 +589,7 @@ section.limitations-bmi {
     #race {
         grid-column: 1 / 1;
         grid-row: auto;
-    } 
+    }
 }
 
 
@@ -422,7 +602,7 @@ section.limitations-bmi p.heading-l {
 @media(max-width: 768px) {
     section.limitations-bmi p.heading-l {
         margin-bottom: 2rem;
-    } 
+    }
 }
 
 @media(max-width: 768px) {
@@ -442,7 +622,7 @@ section.limitations-bmi .limit-tile {
 @media(max-width: 768px) {
     section.limitations-bmi .limit-tile {
         height: initial;
-    } 
+    }
 }
 
 @media(max-width: 390px) {
