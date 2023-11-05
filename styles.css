@@ -12,10 +12,12 @@
 }
 
 
+
 body {
     margin: 0;
     font-family: Inter, sans-serif;
     background-color: var(--white);
+    
 }
 
 p {
@@ -144,10 +146,10 @@ p {
 }
 
 
-
 @media(max-width: 768px) {
     .container {
         padding: 0;
+        margin-bottom: 4rem;
     }
 }
 
@@ -161,22 +163,60 @@ header {
     background-position: bottom left;
     background-repeat: no-repeat;
     position: relative;
-    padding: 16.62rem 7.25rem 5.73rem 7.25rem;
-    gap: 8.25rem;
+    padding: 2rem 7.25rem 5rem;
+    gap: 1.75rem;
     justify-content: space-between;
+    align-items: flex-start;
     box-sizing: border-box;
+    flex-direction: column;
 }
 
 @media(max-width: 768px) {
     header {
-        background: var(--Gradient-1, linear-gradient(290deg, #D6E6FE 0%, rgba(214, 252, 254, 0.00) 100%));
+        align-items: center;
+        padding: 2rem 2.44rem 0 2.44rem;
+        background: url('./assets/images/bg-tablet.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% -18%;
+    }
+}
+
+@media(max-width: 390px) {
+    header {
+        align-items: center;
+        padding: 1.5rem;
+        background: url('./assets/images/bg-mobile.png');
+        background-repeat: no-repeat;
+        background-position: center 50%;
+        background-size: cover;
     }
 }
 
 header .bmi-logo {
-    position: absolute;
-    top: 4.69rem;
-    left: 7.25rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+@media(max-width: 768px) {
+    header .bmi-logo {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+header .header-content {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media(max-width: 768px) {
+    header .header-content {
+        flex-direction: column;
+        gap: 2.5rem;
+    }  
 }
 
 /* styles for the text container */
@@ -185,8 +225,21 @@ header .header-text-container {
     max-width: 500px;
 }
 
+@media(max-width: 768px) {
+    header .header-text-container {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
 .header-text-container p.heading-xl {
     margin-bottom: 2.25rem;
+}
+
+@media(max-width: 768px) {
+    .header-text-container p.heading-xl {
+        margin-bottom: 1.5rem;
+    } 
 }
 
 /* styles for the input container */
@@ -198,7 +251,13 @@ header .input-container {
     padding: 2rem;
     flex-direction: column;
     gap: 2rem;
-    max-width: 26rem;
+    max-width: 35rem;
+}
+
+@media(max-width: 768px) {
+    header .input-container {
+        max-width: 100%;
+    }
 }
 
 header .radio-btns {
@@ -258,6 +317,12 @@ header .input-fields {
     gap: 1.5rem;
 }
 
+@media(max-width: 390px) {
+    header .input-fields {
+        flex-direction: column;
+    } 
+}
+
 header .input-fields .input-field-container {
     flex-grow: 1;
 }
@@ -273,6 +338,12 @@ header .input input {
     font-weight: 600;
     line-height: normal;
     letter-spacing: -0.075rem;
+    
+}
+
+/* hiding the labels for the additional inputs in imperial measures */
+.imperialLabel {
+  visibility: hidden;
 }
 
 /*hide arrows in the numbers input */
@@ -301,6 +372,52 @@ header .input-field-container .input .unit-display {
     text-align: right;
 }
 
+.input-box {
+    flex-grow: 1;
+}
+
+/* bmi-output container  */
+
+header #outputContainer {
+    background: linear-gradient(90deg, #345FF6 0%, #587DFF 100%);
+    padding: 2rem;
+    gap: 1.5rem;
+    color: var(--white);
+    border-radius: 4rem 62rem 62rem 4rem;
+    justify-content: space-between;
+}
+
+@media(max-width: 390px) {
+    header #outputContainer {
+        flex-direction: column;
+        border-radius: 1rem;
+    }
+
+    header #outputContainer p.heading-xl {
+        text-align: left !important;
+    }
+}
+
+header #outputContainer p {
+    color: var(--white)
+}
+
+header #outputContainer .bmi-message {
+    max-width: 12rem;
+    margin-right: 2rem;
+}
+
+
+@media(max-width: 390px) {
+    header #outputContainer .bmi-message {
+        max-width: 100%;
+        margin-right: 0;
+    }
+}
+
+#idealWeightOutput {
+    display: inline-block;
+}
 /* bmi meaning section */
 
 section.bmi-meaning {
@@ -636,3 +753,4 @@ section.limitations-bmi .header-container {
     align-items: center;
     margin-bottom: 1rem;
 }
+
